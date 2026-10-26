@@ -39,7 +39,19 @@ The prompt accepts optional output flags:
 - `6 -png` writes a PNG image.
 - `6 -o render.png` writes to a custom filename.
 
-Generated render files are intentionally ignored by Git.
+## Sample renders
+
+The following renders are included from the `output/NEW` folder.
+
+| Scene 5-1 | Scene 5-2 | Scene 5-3 |
+|---|---|---|
+| ![Scene 5-1](output/NEW/Scene5-1.png) | ![Scene 5-2](output/NEW/Scene5-2.png) | ![Scene 5-3](output/NEW/Scene5-3.png) |
+
+| Scene 6-1 | Scene 6-2 | Scene 6-3 |
+|---|---|---|
+| ![Scene 6-1](output/NEW/Scene6-1.png) | ![Scene 6-2](output/NEW/Scene6-2.png) | ![Scene 6-3](output/NEW/Scene6-3.png) |
+
+Other generated render files are intentionally ignored by Git.
 
 ## Project structure
 

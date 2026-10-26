@@ -10,9 +10,11 @@ build/
 *.dll
 
 # Generated render output
-output/
+output/*
 *.ppm
 *.png
+!output/NEW/
+!output/NEW/*.png
 
 # IDE and editor files
 .idea/
@@ -20,4 +22,3 @@ output/
 
 # CMake user files
 CMakeUserPresets.json
-
