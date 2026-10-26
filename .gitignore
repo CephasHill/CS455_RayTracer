@@ -1,0 +1,23 @@
+# Build directories
+cmake-build-*/
+build/
+
+# Compiled binaries and object files
+*.exe
+*.obj
+*.o
+*.a
+*.dll
+
+# Generated render output
+output/
+*.ppm
+*.png
+
+# IDE and editor files
+.idea/
+.vscode/
+
+# CMake user files
+CMakeUserPresets.json
+

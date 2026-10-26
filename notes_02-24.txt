@@ -1,0 +1,40 @@
+Next assignment: Triangles/polygons, shadows, reflective sphere
+
+Polygon scan conversion: what pixels to illuminate per 3D polygon
+Pixel entirely inside polygon: yes
+pixels partially inside:
+    shared edges: avoid drawing pixels twice
+    remember: a pixel is a sample, not a little square
+   Convention: only fill pixels whose centers are within the polygon
+   Problem: pixel center lies exactly on polygon edge
+   just be consistent
+
+
+Span: adjacent pixels on one scan line that lie inside the polygon from left to right
+Rasterization: Taking successive scan lines and determining which spans of pixels to illuminate
+Exploiting coherence: looking only for those pixels at which change occurs
+    Spatial: primitives are similar from pixel to pixel
+    Span: the pixels within a span are set to the same value
+    Scanline: the spans in consecutive scan lines are similar
+    Edge: consecutive scan liens are likely to intersect the same edges
+
+Process scan lines one at a time, left to right
+For each line determine:
+    polygon edges
+    when we are interior or exterior
+How:
+    determine all points on a scan line that intersect a polygon edge
+    sort the intersection points from left to right
+    group the intersection points in pairs and fill the pixels between the pairs
+    Only count vertices that are the ymin vertex for that line (parity)
+    ignore top horizontal edges
+    close span on left, open on right (xmin <= x < xmax)
+    scan lines closed on bottom and open on top (ymin <= y < ymax)
+
+    Look at one polygon at a time, store information about every edge, compute spans for each scan line, draw pixels between spans
+    Edge table (global vs active)
+
+    x_i+1 = x_i + 1/m
+
+    global edge table will store each edge at its ymin index, stores ymax, x at ymin, 1/m
+    active edge table stores the ymax value for that edge, x value for intersection of edge with scanline, x increment value (1/m)
